@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function getData(){
+				fetch('http://www.cc.puv.fi/~e2301499/mydata.txt')
+				.then( r => r.text()).then(data => dispdata(data));
+			}
+			function dispdata(d){
+				let lines = d.split("\n");
+				let ctt = document.getElementById("data");
+				ctt.innerHTML = d;
+			}
+		</script>
+		<title>MY DATA</title>
+	</head>
+	<body>
+		<button type="button" onclick="getData()">show TXT</button>
+		<p id ="data"></p>
+	</body>
+</html>
